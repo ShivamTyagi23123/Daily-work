@@ -5,12 +5,11 @@ int main() {
     FILE *file;
     char filename[100] = "/home/shivamtyagi/auto-cpufreq/LICENSE";
     file = fopen(filename, "r");
-    if (file == NULL) {
-        printf("Could not open file %s\n", filename);
-        return 1;
+    long size = 0;
+    int ch;
+    while ((ch = fgetc(file)) != EOF) {
+        size++;
     }
-    fseek(file, 0, SEEK_END);
-    long size = ftell(file);
     if (size == 0) {
         printf("The file is empty.\n");
     } else {
