@@ -5,10 +5,6 @@ int main() {
     FILE *file;
     char filename[100] = "/home/shivamtyagi/auto-cpufreq/LICENSE";
     file = fopen(filename, "r");
-    if (file == NULL) {
-        printf("Could not open file %s\n", filename);
-        return 1;
-    }
     int count = 0;
     char ch;
     while ((ch = fgetc(file)) != EOF) {
